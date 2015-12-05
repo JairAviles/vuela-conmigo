@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    $SITIO
+\*------------------------------------*/
+@-webkit-viewport {
+	width : device-width;
+}
+
+@-moz-viewport {
+	width : device-width;
+}
+
+@-ms-viewport {
+	width : device-width;
+}
+
+@-o-viewport {
+	width : device-width;
+}
+
+@viewport {
+	width : device-width;
+}
+
+html {
+	overflow-y: scroll;
+	font-family: $basefont;
+	height: 100%;
+}
+
+/*body {
+	margin : 0;
+	padding : 0;
+	width : 100%;
+	background-color : transparent;
+	font-family : $basefont;
+	line-height : $baselineheight;
+	color : $textcolor;
+} */
+
+header {
+	top: 0;
+	margin-bottom: 15px;
+}
+
+body {
+  background: $background url('#{$image-dir}/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  color: $textcolor;
+  line-height : $baselineheight;
+  box-sizing: border-box;
+  font-size: $basefontsize;
+  overflow: hidden;
+  font-weight: 400;
+}
+
+/**
+* A partir de aquí es donde debes escribir los estilos de posicionamiento
+* y detalles que forman tu web. Disfruta!
+*/
+footer {
+	bottom: 0;
+	left: 0;
+	background-color: $charcoal;
+	position: fixed;
+	padding: 20px 0;
+	box-sizing: border-box;
+	color: $silver;
+	width: 100%;
+	font-family: $subtitlefont;
+	/* line-height : $baselineheight; */
+	text-transform: capitalize;
+}
+
+footer a {
+	color: $silver;
+	text-decoration: none;
+}

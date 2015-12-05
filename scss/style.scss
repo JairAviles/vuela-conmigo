@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    $STYLE
+\*------------------------------------*/
+/**
+ * Aquí incluímos todos los módulos (archivos .scss) que se van
+ * a compilar en el CSS definitivo: /css/style.css.
+ */
+
+/**
+* Librerías
+**/
+@import "lib/mixins.scss";
+@import "lib/settings.scss";
+
+/**
+* Abstracciones
+**/
+@import "abstracciones/grid.scss";
+
+/**
+* Base
+**/
+@import "base/contenido.scss";
+@import "base/fuentes.scss";
+
+/**
+* Elementos
+**/
+@import "elementos/tipografia.scss";
+@import "elementos/imagenes.scss";
+
+/**
+* Layout del sitio
+**/
+@import "layout/navegacion.scss";
+@import "layout/panel.scss";
+@import "layout/sitio.scss";

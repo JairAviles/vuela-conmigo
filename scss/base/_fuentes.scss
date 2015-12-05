@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    $FUENTES
+\*------------------------------------*/
+
+/*
+ * Se incluye
+ */
+
+/*
+ * Directorio de las fuentes locales
+ */
+$font-dir: "../assets/fonts";
+/*
+ * Importamos la fuente de Opens Sans Condensed con los tamaños 300, 300 italic y 700
+ */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+/*
+ * Importamos del archivos local la fuente FrutigerLTStd-BoldCn
+ */
+@font-face {
+  font-family: "FrutigerLTStd-BoldCn";
+  src: local("#{$font-dir}/FrutigerLTStd-BoldCn.otf");
+}
+/*
+ * Importamos del archivos local FrutigerLTStd-LightCn
+ */
+@font-face {
+  font-family: "FrutigerLTStd-LightCn";
+  src: local("#{$font-dir}/FrutigerLTStd-LightCn.otf");
+}

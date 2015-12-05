@@ -1,0 +1,793 @@
+@charset "UTF-8";
+/*------------------------------------*    $STYLE
+\*------------------------------------*/
+/**
+ * Aquí incluímos todos los módulos (archivos .scss) que se van
+ * a compilar en el CSS definitivo: /css/style.css.
+ */
+/**
+* Librerías
+**/
+/*------------------------------------*    $MIXINS
+\*------------------------------------*/
+/**
+ * Mixin para gestionar el tamaño de columnas en el grid
+ */
+/**
+ * Mixin para gestionar el tamaño de offset de columnas en el grid
+ */
+/**
+ * Creamos prefijos para todo dios
+ *
+ *    `@include vendor(border-radius, 4px);`
+ *
+ **/
+/*------------------------------------*    $SETTINGS
+\*------------------------------------*/
+/*------------------------------------*    $OBJETOS Y ABSTRACCIONES
+\*------------------------------------*/
+/**
+ * Qué objetos y abstracciones vamos a usar? (true: se usa, false: no se usa)
+ */
+/**
+ *
+ * Definimos y configuramos las variables CSS que vamos a utilizar
+ *
+ */
+/*------------------------------------*    $DIR
+\*------------------------------------*/
+/**
+ * Con agregar esta variable a las imágenes declaradas en CSS apañamos:
+ */
+/*------------------------------------*    $LAYOUT
+\*------------------------------------*/
+/**
+ * Definimos elementos constantes del layout
+ */
+/*------------------------------------*    $FONT-FACE
+\*------------------------------------*/
+/**
+ * Definimos las fuentes a utilizar:
+ * $basefont para todos los textos inline
+ * $altfont para textos alternativos, como citas, intro, etc...
+ * $codefont para código
+ */
+/*------------------------------------*    $TAMAÑOS
+\*------------------------------------*/
+/**
+ * Definimos los tamaños de fuentes:
+ */
+/*
+ * Las variables de tamaño las definimos en un MAP, puedes añadir, quitar o cambiarlas.
+ * Vienen dadas en REM. Esto creará una clase con el mismo nombre de la variable:
+  .x-small { font-size: .8rem}
+ * También podemos asignar tamaños con un función llamada fs:
+    .selector { font-size: fs(x-small);}
+ *
+ */
+/*------------------------------------*    $COLORS
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+/* Colores Primarios */
+/* Colores Secundarios */
+/* Colores Pasteles */
+/**
+ * Escala de grises
+ * A veces no queremos que el negro sea "negro" o el blanco "blanco", puedes cambiarlos.
+ */
+/*------------------------------------*    $TEXTURAS
+\*------------------------------------*/
+/**
+ * Definimos Colores y elementos de popups, mensajes de alerta, etc...
+ */
+/* Colores sociales -> son los colores corporativos, pero cambiadlos
+ * si hace falta. (también podéis añadir más)  ///////////////////////
+ */
+/**
+* Abstracciones
+**/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+.muestra {
+  border: 1px solid red;
+  padding: 10px; }
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+  max-width: 90%; }
+
+.row {
+  box-sizing: border-box;
+  /* Omite el margin */
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -1%;
+  margin-left: -1%; }
+  .row + .row {
+    margin-bottom: 10px; }
+  .row.reverse {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse; }
+
+.col.reverse {
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  flex-direction: column-reverse; }
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  padding: 0 1%; }
+
+.col-0 {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-preferred-size: 0%;
+  -webkit-flex-basis: 0%;
+  flex-basis: 0%;
+  max-width: 0%; }
+
+.col-1 {
+  -ms-flex-preferred-size: 7.5%;
+  -webkit-flex-basis: 7.5%;
+  flex-basis: 7.5%;
+  max-width: 7.5%; }
+
+.col-2 {
+  -ms-flex-preferred-size: 15%;
+  -webkit-flex-basis: 15%;
+  flex-basis: 15%;
+  max-width: 15%; }
+
+.col-3 {
+  -ms-flex-preferred-size: 22.5%;
+  -webkit-flex-basis: 22.5%;
+  flex-basis: 22.5%;
+  max-width: 22.5%; }
+
+.col-4 {
+  -ms-flex-preferred-size: 30%;
+  -webkit-flex-basis: 30%;
+  flex-basis: 30%;
+  max-width: 30%; }
+
+.col-5 {
+  -ms-flex-preferred-size: 37.5%;
+  -webkit-flex-basis: 37.5%;
+  flex-basis: 37.5%;
+  max-width: 37.5%; }
+
+.col-6 {
+  -ms-flex-preferred-size: 45%;
+  -webkit-flex-basis: 45%;
+  flex-basis: 45%;
+  max-width: 45%; }
+
+.col-7 {
+  -ms-flex-preferred-size: 52.5%;
+  -webkit-flex-basis: 52.5%;
+  flex-basis: 52.5%;
+  max-width: 52.5%; }
+
+.col-8 {
+  -ms-flex-preferred-size: 60%;
+  -webkit-flex-basis: 60%;
+  flex-basis: 60%;
+  max-width: 60%; }
+
+.col-9 {
+  -ms-flex-preferred-size: 67.5%;
+  -webkit-flex-basis: 67.5%;
+  flex-basis: 67.5%;
+  max-width: 67.5%; }
+
+.col-10 {
+  -ms-flex-preferred-size: 75%;
+  -webkit-flex-basis: 75%;
+  flex-basis: 75%;
+  max-width: 75%; }
+
+.col-11 {
+  -ms-flex-preferred-size: 82.5%;
+  -webkit-flex-basis: 82.5%;
+  flex-basis: 82.5%;
+  max-width: 82.5%; }
+
+.col-12 {
+  -ms-flex-preferred-size: 90%;
+  -webkit-flex-basis: 90%;
+  flex-basis: 90%;
+  max-width: 90%; }
+
+.col-offset-1 {
+  margin-left: 8.33333%; }
+
+.col-offset-2 {
+  margin-left: 16.66667%; }
+
+.col-offset-3 {
+  margin-left: 25%; }
+
+.col-offset-4 {
+  margin-left: 33.33333%; }
+
+.col-offset-5 {
+  margin-left: 41.66667%; }
+
+.col-offset-6 {
+  margin-left: 50%; }
+
+.col-offset-7 {
+  margin-left: 58.33333%; }
+
+.col-offset-8 {
+  margin-left: 66.66667%; }
+
+.col-offset-9 {
+  margin-left: 75%; }
+
+.col-offset-10 {
+  margin-left: 83.33333%; }
+
+.col-offset-11 {
+  margin-left: 91.66667%; }
+
+.start {
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  text-align: start; }
+
+.center {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center; }
+
+.end {
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  text-align: end; }
+
+.top {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  -webkit-box-align: start;
+  align-items: flex-start; }
+
+.middle {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center; }
+
+.bottom {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  -webkit-box-align: end;
+  align-items: flex-end; }
+
+.around {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.between {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+  justify-content: space-between; }
+
+.first {
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  -webkit-box-ordinal-group: 0;
+  order: -1; }
+
+.last {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  -webkit-box-ordinal-group: 2;
+  order: 1; }
+
+/**
+* Base
+**/
+/*------------------------------------*    $CONTENIDO
+\*------------------------------------*/
+/**
+ * Contenido..................... Esto que lees
+ * Variables..................... Configuramos todas las variables del framework
+ * Mixins........................ Mixins de SASS
+ * Fuentes....................... Fuentes que vamos a importar
+ * Links......................... Formas y estilos de los links
+ * Botones....................... Estilos de Botones, skins y variantes
+ * Elementos..................... Elementos varios como Imagen, HR, etc...
+ * Tipografía.................... Encabezados, small, párrafos, listas, etc...
+ * Navegación.................... Una navegación ubicada en el header
+ * Formularios................... Estilos de todos los elementos de formularios y sus variantes
+ * Sitio......................... Aquí escribes tus estilos para la web se vea como tú quieres ;)
+ * Paginación.................... Estilos básicos para las paginaciones
+ * Texturas...................... Badges, cajas y wells
+ **/
+/*------------------------------------*    $FUENTES
+\*------------------------------------*/
+/*
+ * Se incluye
+ */
+/*
+ * Directorio de las fuentes locales
+ */
+/*
+ * Importamos la fuente de Opens Sans Condensed con los tamaños 300, 300 italic y 700
+ */
+/*
+ * Importamos del archivos local la fuente FrutigerLTStd-BoldCn
+ */
+@font-face {
+  font-family: "FrutigerLTStd-BoldCn";
+  src: local("../assets/fonts/FrutigerLTStd-BoldCn.otf"); }
+
+/*
+ * Importamos del archivos local FrutigerLTStd-LightCn
+ */
+@font-face {
+  font-family: "FrutigerLTStd-LightCn";
+  src: local("../assets/fonts/FrutigerLTStd-LightCn.otf"); }
+
+/**
+* Elementos
+**/
+/*------------------------------------*    $TIPOGRAFÍA
+\*------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Georgia", serif;
+  font-weight: normal;
+  color: inherit;
+  text-rendering: optimizelegibility; }
+  h1.altheader,
+  h2.altheader,
+  h3.altheader,
+  h4.altheader,
+  h5.altheader,
+  h6.altheader {
+    color: #005daa;
+    text-transform: uppercase;
+    display: block; }
+
+.text--cranberry {
+  color: #d91b5c; }
+
+.text--azure {
+  color: #005daa; }
+
+h1, .h1 {
+  margin-bottom: 0;
+  font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+h2, .h2 {
+  margin-bottom: 0;
+  font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+h3, .h3 {
+  margin-bottom: 0;
+  font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
+  font-size: 2.1rem;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+h4, .h4 {
+  margin-bottom: 0;
+  font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+h5, .h5 {
+  margin-bottom: 0;
+  font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+h6, .h6 {
+  margin-bottom: 0;
+  font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+p,
+ol,
+ul,
+dl,
+address {
+  margin-bottom: 1em;
+  line-height: 1em; }
+
+hr {
+  clear: both;
+  display: block;
+  margin: 1em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #a2b0bc; }
+
+/*
+ * Creamos clases para cada uno de los tamaños de fuentes. Se pueden ver en Settings.
+ * Son los nombres de las varables con el prefijo font-
+ * Por ejemplo:
+        .font-x-small {
+            font-size: .8rem;
+        }
+ */
+.font-x-small {
+  font-size: 0.6rem; }
+
+.font-small {
+  font-size: 0.8rem; }
+
+.font-normal {
+  font-size: 1rem; }
+
+.font-big {
+  font-size: 1.5rem; }
+
+.font-huge {
+  font-size: 2rem; }
+
+/*------------------------------------*    $IMÁGENES
+\*------------------------------------*/
+img {
+  width: 100%;
+  float: left; }
+
+.img--margin {
+  margin: 50px 15px; }
+
+.img--rounded {
+  border-radius: 12px; }
+
+.img--polaroid {
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #a2b0bc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+
+.img--circle {
+  border-radius: 100%; }
+
+/**
+* Layout del sitio
+**/
+/*------------------------------------*    $NAVEGACIÓN
+\*------------------------------------*/
+/**
+*
+* La semántica va como sigue:
+
+    <nav class ="row between middle" role='navigation'>
+          <div class="col-2">
+            <a href="index.html">
+              <img src="img/secciones/logo_header.PNG" />
+            </a>
+          </div>
+          <!-- Unordered list -->
+          <div class="col-10 navbar">
+            <ul class="menu no-js row between middle">
+                  <li class="menu-item col"><a href="#" class="active" nav>Inicio</a></li>
+                  <li class="menu-item col"><a href="#" nav>Quienes S&oacute;mos</a>
+                      <ul class="sub-menu">
+                        <li class="menu-item">
+                            <a href="#" nav>Rotary</a>
+                        </li>
+                        <li class="menu-item"><a href="#" nav>Rotaract</a></li>
+                              <li class="menu-item"><a href="#" nav>Proyecto</a></li>
+                      </ul>
+                  </li>
+                  <li class="menu-item col"><a href="#" nav>Actividades</a></li>
+                  <li class="menu-item col"><a href="#" nav>Orfanatos</a></li>
+                  <li class="menu-item col"><a href="#" nav>Recaudaci&oacute;n de Fondos</a></li>
+                  <li class="menu-item col"><a href="#" nav>Contacto</a></li>
+                </ul>
+              </div>
+      </nav>
+* Y no te olvides de modificar las variables en el archivo de variables ($nav-**)
+*/
+/* Variables */
+.menu ul li, .menu ul a {
+  display: block;
+  position: relative; }
+
+.menu li, .menu a {
+  display: inline-block;
+  position: relative; }
+
+/* Essential Styles */
+.menu {
+  postion: relative;
+  list-style: none;
+  float: left;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 5px 0 #d91b5c;
+  font-size: 14px;
+  *zoom: 1; }
+  .menu li {
+    float: left; }
+  .menu a {
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%; }
+  .menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 120%;
+    min-width: 120%;
+    padding: 0;
+    margin: 0; }
+    .menu ul ul {
+      top: -0.35rem;
+      left: 0%; }
+    .menu ul li {
+      float: left;
+      width: 100%; }
+    .menu ul a {
+      height: 2rem;
+      line-height: 2rem; }
+  .menu li:hover > .sub-menu {
+    display: block;
+    transition: all 700ms ease; }
+  .menu:before, .menu:after {
+    content: " ";
+    display: table; }
+  .menu:after {
+    clear: both; }
+
+/* THEME  */
+.navbar {
+  background: #d91b5c;
+  *zoom: 1; }
+  .navbar:before, .navbar:after {
+    content: " ";
+    display: table; }
+  .navbar:after {
+    clear: both; }
+
+.menu {
+  width: 100%;
+  /* Change this in order to change the Dropdown symbol */ }
+  .menu li {
+    /*border-right:1px dotted $silver;*/
+    width: auto; }
+    .menu li:last-child {
+      border-right: none; }
+  .menu a[nav] {
+    color: white;
+    /*font-size :0.75rem;*/
+    font-family: 'FrutigerLTStd-BoldCn', 'FrutigerLTStd-LightCn', sans-serif;
+    font-weight: 700;
+    font-size: 100%;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 0 0.75rem; }
+    .menu a[nav]:hover, .menu a[nav].active {
+      color: white;
+      background-color: #58585a;
+      /*  border-bottom: 1px solid; */
+      transition: all 700ms ease; }
+  .menu .sub-menu li > a:after, .menu li > a:after {
+    line-height: 1em;
+    font-size: 6px;
+    padding-left: 6px;
+    position: relative;
+    top: -2px; }
+  .menu .sub-menu li > a:after {
+    content: ' \25B6'; }
+  .menu li > a:after {
+    content: ' \25BC'; }
+  .menu li > a:only-child:after,
+  .menu .sub-menu li > a:only-child:after {
+    content: ' '; }
+  .menu .sub-menu {
+    background: #d91b5c;
+    padding: 0.35rem 2.25rem 0.25rem;
+    transition: all 700ms ease; }
+    .menu .sub-menu li {
+      border-right: none; }
+    .menu .sub-menu a {
+      color: white;
+      /*padding: 0.35rem ($menuHeight / 2);*/ }
+      .menu .sub-menu a:hover {
+        background: #58585a;
+        border-bottom: none;
+        transition: all 700ms ease; }
+    .menu .sub-menu:before {
+      content: ' ';
+      border-bottom: 14px solid #d91b5c;
+      border-right: 14px solid transparent;
+      position: absolute;
+      top: -14px;
+      left: 0; }
+    .menu .sub-menu .sub-menu {
+      background: #58585a; }
+      .menu .sub-menu .sub-menu:before {
+        content: ' ';
+        border-right: 14px solid #58585a;
+        border-bottom: 14px solid transparent;
+        position: absolute;
+        top: 0;
+        left: -14px; }
+      .menu .sub-menu .sub-menu li a:hover,
+      .menu .sub-menu .sub-menu li a:active {
+        background: #58585a;
+        transition: all 700ms ease; }
+  .menu .active,
+  .menu .current_page_item a,
+  .menu .current-menu-item a {
+    color: #58585a; }
+
+/*------------------------------------*    $PANEL
+\*------------------------------------*/
+.panel {
+  padding: 40px 40px;
+  border-color: #58585a; }
+
+.panel--container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 85%;
+  background-color: #e7e7e8; }
+
+.panel--secondary {
+  margin-right: auto;
+  margin-left: auto;
+  width: 83%;
+  background-color: white; }
+
+.panel table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.panel table td {
+  width: 100px;
+  padding: 10px 20px; }
+
+.panel--social_media {
+  margin: 0 auto;
+  width: 920px;
+  padding: 0 10px; }
+
+.panel--bottom {
+  /*padding-left: 20px;
+	padding-right: 20px;*/
+  margin-right: auto;
+  margin-left: auto;
+  width: 85%;
+  background-color: #d91b5c;
+  color: white; }
+
+/*------------------------------------*    $SITIO
+\*------------------------------------*/
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@-o-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+
+html {
+  overflow-y: scroll;
+  font-family: "Open Sans Condensed", Arial, sans-serif;
+  height: 100%; }
+
+/*body {
+	margin : 0;
+	padding : 0;
+	width : 100%;
+	background-color : transparent;
+	font-family : $basefont;
+	line-height : $baselineheight;
+	color : $textcolor;
+} */
+header {
+  top: 0;
+  margin-bottom: 15px; }
+
+body {
+  background: white url("../img/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  color: #9ea6b4;
+  line-height: 1em;
+  box-sizing: border-box;
+  font-size: 20px;
+  overflow: hidden;
+  font-weight: 400; }
+
+/**
+* A partir de aquí es donde debes escribir los estilos de posicionamiento
+* y detalles que forman tu web. Disfruta!
+*/
+footer {
+  bottom: 0;
+  left: 0;
+  background-color: #58585a;
+  position: fixed;
+  padding: 20px 0;
+  box-sizing: border-box;
+  color: #e7e7e8;
+  width: 100%;
+  font-family: "Georgia", serif;
+  /* line-height : $baselineheight; */
+  text-transform: capitalize; }
+
+footer a {
+  color: #e7e7e8;
+  text-decoration: none; }

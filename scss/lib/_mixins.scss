@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+/**
+ * Mixin para gestionar el tamaño de columnas en el grid
+ */
+@mixin columns {
+  @for $i from 0 through $columns {
+    .col-#{$i} {
+      @if $i == 0 {
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        -webkit-box-flex: 1;
+      }
+      -ms-flex-preferred-size: ($container / $columns) * $i;
+      -webkit-flex-basis: ($container / $columns) * $i;
+      flex-basis: ($container / $columns) * $i;
+      max-width: ($container / $columns) * $i;
+    }
+  }
+}
+
+/**
+ * Mixin para gestionar el tamaño de offset de columnas en el grid
+ */
+@mixin columns-offset {
+  @for $i from 1 through $columns - 1 {
+    .col-offset-#{$i} {
+      margin-left: ($totalContainer / $columns) * $i;
+    }
+  }
+}
+
+/**
+ * Creamos prefijos para todo dios
+ *
+ *    `@include vendor(border-radius, 4px);`
+ *
+ **/
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}

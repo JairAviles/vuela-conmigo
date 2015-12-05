@@ -1,0 +1,48 @@
+/*------------------------------------*\
+    $PANEL
+\*------------------------------------*/
+
+.panel {
+	padding: 40px 40px;
+	border-color: $charcoal;
+}
+
+.panel--container {
+	margin-right:  auto;
+	margin-left:   auto;
+	width: 85%;
+	background-color: $silver;
+}
+
+.panel--secondary {
+	margin-right:  auto;
+	margin-left:   auto;
+	width: 83%;
+	background-color: $white;
+}
+
+.panel table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.panel table td{
+	width: 100px;
+	padding: 10px 20px;
+}
+
+.panel--social_media {
+	margin: 0 auto;
+	width: 920px;
+	padding: 0 10px;
+}
+
+.panel--bottom {
+	/*padding-left: 20px;
+	padding-right: 20px;*/
+	margin-right:  auto;
+	margin-left:   auto;
+	width: 85%;
+	background-color: $cranberry;
+	color: $white;
+}

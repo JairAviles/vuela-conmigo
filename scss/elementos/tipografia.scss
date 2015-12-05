@@ -1,0 +1,87 @@
+/*------------------------------------*\
+    $TIPOGRAFÍA
+\*------------------------------------*/
+
+// HEADINGS ====================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin : 0;
+	font-family : $baseheadingfont;
+	font-weight : $baseheadingfontweight;
+	color : $baseheadingfontcolor;
+	text-rendering : optimizelegibility;
+		&.altheader {
+			color:$azure;
+			text-transform: uppercase;
+            display: block;
+		}
+}
+
+.text--cranberry {
+	color: $cranberry;
+}
+
+.text--azure {
+	color: $azure;
+}
+
+// Set headers line-height, margin bottom and font size
+@each   $header,
+        $margin-bot,
+        $font-size,
+        $line-height
+        in  (h1, 0, 2.5, 1.5)
+            (h2, 0, 2.4, 1.5)
+            (h3, 0, 2.1, 1.5)
+            (h4, 0, 1.8, 1.5)
+            (h5, 0, 1.6, 1.5)
+            (h6, 0, 1.4, 1.5){
+
+  #{$header}, .#{$header} {
+  	margin-bottom : $margin-bot;
+  	font-family: $titlefont;
+  	font-size: ($font-size) * 1rem;
+  	line-height : $line-height;
+  	text-transform: uppercase;
+  }
+}
+// TYPOGRAFÍA ====================================================
+
+p,
+ol,
+ul,
+dl,
+address {
+	margin-bottom : $baselineheight;
+	line-height : $baselineheight;
+}
+
+hr {
+  clear : both;
+  display : block;
+  margin : $baselineheight 0;
+  padding : 0;
+  height : 1px;
+  border : 0;
+  border-top : 1px solid $bordercolor;
+}
+
+/*
+ * Creamos clases para cada uno de los tamaños de fuentes. Se pueden ver en Settings.
+ * Son los nombres de las varables con el prefijo font-
+ * Por ejemplo:
+        .font-x-small {
+            font-size: .8rem;
+        }
+ */
+
+@each $name, $value in $size-vars {
+  .font-#{$name} {
+    font-size: $value * 1rem;
+  }
+}

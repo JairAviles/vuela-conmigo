@@ -13,7 +13,7 @@ Adicional, el diseño se trabajo siguiendo el flujo de trabajo de Diseño de exp
 
   - Diseño y definicón de arquitectura de información del sitio
   - Definición de personas target para el sitio
-  - Creación de [Wireframes](https://invis.io/5S4L58MD7) y Mock Ups
+  - Creación de [Wireframes](https://invis.io/5S4L58MD7)
   - Maquetación de la estructura del sitio
   - Diseño y definición de estilos. Integración con el contenido maquetado.
   - Despliegue del sitio web

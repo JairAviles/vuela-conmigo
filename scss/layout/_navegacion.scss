@@ -1,0 +1,245 @@
+@if $incluir-navegacion == true{
+
+/*------------------------------------*\
+    $NAVEGACIÓN
+\*------------------------------------*/
+/**
+*
+* La semántica va como sigue:
+
+    <nav class ="row between middle" role='navigation'>
+          <div class="col-2">
+            <a href="index.html">
+              <img src="img/secciones/logo_header.PNG" />
+            </a>
+          </div>
+          <!-- Unordered list -->
+          <div class="col-10 navbar">
+            <ul class="menu no-js row between middle">
+                  <li class="menu-item col"><a href="#" class="active" nav>Inicio</a></li>
+                  <li class="menu-item col"><a href="#" nav>Quienes S&oacute;mos</a>
+                      <ul class="sub-menu">
+                        <li class="menu-item">
+                            <a href="#" nav>Rotary</a>
+                        </li>
+                        <li class="menu-item"><a href="#" nav>Rotaract</a></li>
+                              <li class="menu-item"><a href="#" nav>Proyecto</a></li>
+                      </ul>
+                  </li>
+                  <li class="menu-item col"><a href="#" nav>Actividades</a></li>
+                  <li class="menu-item col"><a href="#" nav>Orfanatos</a></li>
+                  <li class="menu-item col"><a href="#" nav>Recaudaci&oacute;n de Fondos</a></li>
+                  <li class="menu-item col"><a href="#" nav>Contacto</a></li>
+                </ul>
+              </div>
+      </nav>
+* Y no te olvides de modificar las variables en el archivo de variables ($nav-**)
+*/
+
+/* Variables */
+$menuHeight      : 3rem;
+$subHeight       : 2rem;
+$subwidth        : 120%;
+$subPadding      : 0.35rem 2.25rem 0.25rem;
+$suboffset       : 0.35rem; // offset the top padding
+
+@mixin cf() {
+  *zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+	 clear: both;
+	}
+}
+
+%blockRel {
+  display:block;
+  position: relative;
+}
+
+%inBlockRel {
+  display:inline-block;
+  position: relative;
+}
+
+%inRel {
+  display:inline;
+  position: relative;
+}
+
+/* Essential Styles */
+.menu {
+  postion:relative;
+  list-style:none;
+  float:left;
+  padding:0;
+  margin:0;
+  box-shadow: 0 2px 5px 0 $cranberry;
+  font-size: 14px;
+
+  li {
+    @extend %inBlockRel;
+    float: left;
+  }
+  a {
+      @extend %inBlockRel;
+      height:$menuHeight;
+      line-height:$menuHeight;
+      width:100%;
+    }
+
+  ul { // drop down menu
+    display: none;
+    position: absolute;
+    top: 100%;
+    left : 0px;
+    width: $subwidth;
+    min-width:$subwidth;
+    padding: 0;
+    margin:0;
+
+    ul { // nested drops
+      top: (0 - $suboffset);
+      left: 0%;
+    }
+
+    li {
+      @extend %blockRel;
+      float: left;
+      width:100%;
+    }
+
+    a {
+      @extend %blockRel;
+      height: $subHeight;
+      line-height: $subHeight;
+    }
+
+  }
+
+  li:hover > .sub-menu {
+      display: block;
+      transition:all 700ms ease;
+    }
+
+  @include cf();
+}
+
+/* THEME  */
+.navbar {
+  background: $cranberry;
+  @include cf();
+}
+
+.menu {
+  width: 100%;
+
+  li {
+    /*border-right:1px dotted $silver;*/
+    width: auto;
+    &:last-child {
+      border-right:none;
+    }
+  }
+
+  a[nav] {
+    color :$white;
+    /*font-size :0.75rem;*/
+    font-family: 'FrutigerLTStd-BoldCn', 'FrutigerLTStd-LightCn', sans-serif;
+    font-weight: 700;
+    font-size :100%;
+    text-decoration :none;
+    text-transform :capitalize;
+    padding: 0 0.75rem;
+
+    &:hover,
+    &.active {
+      color : $white;
+      background-color: $charcoal;
+     /*  border-bottom: 1px solid; */
+      transition:all 700ms ease;
+    }
+  }
+
+    %arrow {
+      line-height:1em;
+      font-size:6px;
+      padding-left:6px;
+      position:relative;
+      top:-2px;
+    }
+
+  /* Change this in order to change the Dropdown symbol */
+  .sub-menu li > a:after {
+    @extend %arrow;
+    content: ' \25B6';
+
+  }
+
+  li > a:after {
+    @extend %arrow;
+    content: ' \25BC';
+
+  }
+  li > a:only-child:after,
+  .sub-menu li > a:only-child:after {
+    content: ' ';
+  }
+
+   // Drop Down Menus
+  .sub-menu {
+    background:$cranberry;
+    padding :$subPadding;
+    transition:all 700ms ease;
+    li {
+      border-right:none;
+    }
+    a {
+      color:$white;
+      /*padding: 0.35rem ($menuHeight / 2);*/
+      &:hover {
+        background: $charcoal;
+        border-bottom: none;
+        transition:all 700ms ease;
+      }
+    }
+    &:before {
+      content : ' ';
+      border-bottom: 14px solid $cranberry;
+      border-right:14px solid transparent;
+      position : absolute;
+      top: -14px;
+      left: 0;
+    }
+
+    // Nested Drop Down Menus
+    .sub-menu {
+        background : $charcoal;
+        &:before {
+          content : ' ';
+          border-right: 14px solid $charcoal;
+          border-bottom:14px solid transparent;
+          position : absolute;
+          top: 0;
+          left: -14px;
+        }
+
+      li a:hover,
+      li a:active {
+          background: $charcoal;
+          transition:all 700ms ease;
+        }
+    }
+
+  } // end sub-menus
+
+  .active,
+  .current_page_item a,
+  .current-menu-item a {
+    color : $charcoal;
+  }
+
+}
+} //endif
