@@ -242,4 +242,18 @@ $suboffset       : 0.35rem; // offset the top padding
   }
 
 }
+.crumbs {
+      padding: $baselineheight/3;
+    }
+    .crumbs li {
+      display: inline-block;
+    }
+    .crumbs li:after {
+      content: '→';
+      padding: 0 0.25em 0 0.5em;
+      color: $cranberry;
+    }
+    .crumbs li.last:before, .crumbs li.last:after {
+      content: '';
+    }
 } //endif

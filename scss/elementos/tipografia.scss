@@ -60,6 +60,20 @@ address {
 	margin-bottom : $baselineheight;
 	line-height : $baselineheight;
 }
+a {
+  text-decoration: none;
+  color: $linkcolor;
+}
+
+a:hover {
+  color: $linkcolorfocus;
+}
+
+a.more{
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: underline;
+}
 
 hr {
   clear : both;

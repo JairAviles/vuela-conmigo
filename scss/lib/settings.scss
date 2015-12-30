@@ -11,7 +11,7 @@
  */
 
 $incluir-grid:          true!default;
-$incluir-imgclass:          true!default;
+$incluir-imgclass:      true!default;
 $incluir-botones:       true!default;
 $incluir-navegacion:    true!default;
 $incluir-tablas:        true!default;
@@ -133,8 +133,8 @@ $textcolor-strong:	$black;
 // Links  //////////////////////
 $linkcolor 		    : $sky-blue;
 $linkcolorhover 	: $linkcolor;
-$linkcolorvisited   : $powder-blue;
-$linkcolorfocus 	: $linkcolor;
+$linkcolorvisited   : $charcoal;
+$linkcolorfocus 	: $linkcolorvisited;
 
 
 

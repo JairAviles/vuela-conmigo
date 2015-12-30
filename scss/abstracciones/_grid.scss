@@ -38,9 +38,6 @@ $totalContainer: 100%;
   flex-wrap: wrap;
   margin-right: -1%;
   margin-left: -1%;
-  + .row {
-    margin-bottom: 10px;
-  }
   &.reverse {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;

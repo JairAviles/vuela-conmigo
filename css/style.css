@@ -121,8 +121,6 @@
   flex-wrap: wrap;
   margin-right: -1%;
   margin-left: -1%; }
-  .row + .row {
-    margin-bottom: 10px; }
   .row.reverse {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
@@ -409,6 +407,9 @@ h6 {
 .text--azure {
   color: #005daa; }
 
+.text--strong {
+  font-weight: 600; }
+
 h1, .h1 {
   margin-bottom: 0;
   font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
@@ -458,6 +459,18 @@ dl,
 address {
   margin-bottom: 1em;
   line-height: 1em; }
+
+a {
+  text-decoration: none;
+  color: #01b4e7; }
+
+a:hover {
+  color: #58585a; }
+
+a.more {
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: underline; }
 
 hr {
   clear: both;
@@ -684,19 +697,33 @@ img {
   .menu .current-menu-item a {
     color: #58585a; }
 
+.crumbs {
+  padding: 0.33333em; }
+
+.crumbs li {
+  display: inline-block; }
+
+.crumbs li:after {
+  content: '→';
+  padding: 0 0.25em 0 0.5em;
+  color: #d91b5c; }
+
+.crumbs li.last:before, .crumbs li.last:after {
+  content: ''; }
+
 /*------------------------------------*    $PANEL
 \*------------------------------------*/
 .panel {
   padding: 40px 40px;
   border-color: #58585a; }
 
-.panel--container {
+.panel__container {
   margin-right: auto;
   margin-left: auto;
   width: 85%;
   background-color: #e7e7e8; }
 
-.panel--secondary {
+.panel__secondary {
   margin-right: auto;
   margin-left: auto;
   width: 83%;
@@ -704,20 +731,20 @@ img {
 
 .panel table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+  width: auto; }
 
 .panel table td {
   width: 100px;
-  padding: 10px 20px; }
+  padding: 10px 20px;
+  background: transparent; }
 
 .panel--social_media {
   margin: 0 auto;
-  width: 920px;
+  /*width: 920px; */
   padding: 0 10px; }
 
 .panel--bottom {
-  /*padding-left: 20px;
-	padding-right: 20px;*/
   margin-right: auto;
   margin-left: auto;
   width: 85%;
@@ -779,15 +806,20 @@ footer {
   bottom: 0;
   left: 0;
   background-color: #58585a;
-  position: fixed;
+  position: relative;
   padding: 20px 0;
   box-sizing: border-box;
   color: #e7e7e8;
   width: 100%;
+  height: 70px;
   font-family: "Georgia", serif;
-  /* line-height : $baselineheight; */
-  text-transform: capitalize; }
+  line-height: 1em;
+  text-transform: capitalize;
+  margin: 0; }
 
 footer a {
   color: #e7e7e8;
   text-decoration: none; }
+
+footer a:hover {
+  color: #e7e7e8; }
