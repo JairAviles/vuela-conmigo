@@ -46,3 +46,23 @@
 	background-color: $cranberry;
 	color: $white;
 }
+
+.info {
+	border: 2px solid $azure;
+	height: 380px;
+	padding: 40px 20px;
+	width: 298px;
+	margin-right: 20px;
+}
+
+.info:last-of-type{
+	margin-right: 0px;
+}
+
+.info ul {
+	list-style-type: circle
+}
+.info ul li {
+	margin-bottom: 0.5em;
+	line-height: 0.75em;
+}

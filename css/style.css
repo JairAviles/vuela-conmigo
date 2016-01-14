@@ -544,6 +544,14 @@ h6 {
 .text--azure {
   color: #005daa; }
 
+.text__align--center {
+  text-align: center; }
+
+.text__image--quote {
+  color: white;
+  text-shadow: 3px 3px 0 #58585a;
+  padding: 0 1rem; }
+
 h1, .h1 {
   margin-bottom: 0;
   font-family: "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
@@ -667,6 +675,14 @@ figure {
   display: inline-block;
   box-sizing: border-box;
   border: 2px solid #687d90; }
+
+#aboutUs_Quote1 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: white url("../img/secciones/acerca/about_us_1-min.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
 
 /**
 * Layout del sitio
@@ -893,6 +909,23 @@ figure {
   width: 85%;
   background-color: #d91b5c;
   color: white; }
+
+.info {
+  border: 2px solid #005daa;
+  height: 380px;
+  padding: 40px 20px;
+  width: 298px;
+  margin-right: 20px; }
+
+.info:last-of-type {
+  margin-right: 0px; }
+
+.info ul {
+  list-style-type: circle; }
+
+.info ul li {
+  margin-bottom: 0.5em;
+  line-height: 0.75em; }
 
 /*------------------------------------*    $SITIO
 \*------------------------------------*/

@@ -30,6 +30,16 @@ h6 {
 	color: $azure;
 }
 
+.text__align--center{
+  text-align: center;
+}
+
+.text__image--quote {
+  color: $white;
+  text-shadow: 3px 3px 0 $charcoal;
+  padding: 0 1rem;
+}
+
 // Set headers line-height, margin bottom and font size
 @each   $header,
         $margin-bot,
