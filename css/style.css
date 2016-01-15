@@ -912,9 +912,9 @@ figure {
 
 .info {
   border: 2px solid #005daa;
-  height: 380px;
+  height: auto;
   padding: 40px 20px;
-  width: 298px;
+  width: 310px;
   margin-right: 20px; }
 
 .info:last-of-type {
@@ -963,7 +963,7 @@ header {
   margin-bottom: 15px; }
 
 body {
-  background: white url("../img/background.jpg") no-repeat center center fixed;
+  background: white url("../img/background-min.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
