@@ -5,6 +5,28 @@
 	<link  rel="shortcut icon" type="image/x-icon" href="../img/ico.png">
 	<title>Vuela Conmigo :: Rotaract</title>
 	<meta charset="UTF-8">
+		<style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+      .map {
+      	margin-bottom: 2rem;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(19.3249688, -99.0914558),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 <body>
 	<!-- Header -->
@@ -58,7 +80,21 @@
 	<section class="panel__secondary">
 		<div class="row panel">
 			<div class="col-12">
-				<p> Pendiente.</p>
+				<p> A continuaci&oacute;n se describen los datos de aquellas instituciones sin fines de lucro que nos permiten colaborar con este proyecto.</p>
+			</div>
+			<div class="col-12 center">
+				<h4>Ciudad de M&eacute;xico</h4>
+				<p><a href="http://www.internadoinfantilguadalupano.org.mx/" target="_blank">Internado Infantil Guadalupano</a></p>
+				<div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.0193001276343!2d-99.09145578545312!3d19.324968786945565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0222b9000001%3A0xfb729b46007f4cb2!2sInternado+Infantil+Guadalupano!5e0!3m2!1sen!2smx!4v1452897348930" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-12 center">
+				<h4>Ciudad Ju&aacute;rez</h4>
+				<p><a href="https://www.facebook.com/media/set/?set=a.497368656228.264547.177022766228" target="_blank">Albergue Santa Mar&iacute;a</a></p>
+				<div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.094710837782!2d-106.53000998484728!3d31.603864481342033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e76022340b4e3d%3A0xbcd927061ea554ed!2sDe+la+Amp.+3922%2C+Tesoro+Escondido%2C+32675+Cd+Ju%C3%A1rez%2C+Chih.%2C+M%C3%A9xico!5e0!3m2!1ses!2s!4v1452898548717" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
 			</div>
 		</div>
 	</section>
