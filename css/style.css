@@ -918,7 +918,7 @@ figure {
   margin-right: 20px; }
 
 .info:last-of-type {
-  margin-right: 0px; }
+  margin-right: 0; }
 
 .info ul {
   list-style-type: circle; }
