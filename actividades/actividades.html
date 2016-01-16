@@ -5,6 +5,25 @@
 	<link  rel="shortcut icon" type="image/x-icon" href="../img/ico.png">
 	<title>Vuela Conmigo :: Rotaract</title>
 	<meta charset="UTF-8">
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+	<script>
+		$(document).ready(function() {
+    	'use strict';
+		    /**
+		     * Attach all event listeners
+		     * @No parameters
+		     */
+		    $('[ui-btn]').on('click', function(e) {
+		        var target = $(e.target).closest('[ui-card]');
+		        if ( target.attr('ui-card') === 'active' ) {
+		            target.attr('ui-card', '');
+		        } else {
+		            target.attr('ui-card', 'active');
+		        }
+		    });
+		});
+	</script>
 </head>
 <body>
 	<!-- Header -->
@@ -24,10 +43,10 @@
 					        <li class="menu-item col"><a href="#" nav>Quienes S&oacute;mos</a>
 					            <ul class="sub-menu">
 					              <li class="menu-item">
-					                  <a href="../acerca/rotary.html" nav>Rotary Internacional</a>
+					                  <a href="../acerca/rotary.html" nav>Rotary</a>
 					              </li>
 					              <li class="menu-item"><a href="../acerca/rotaract.html" nav>Rotaract</a></li>
-					                    <li class="menu-item"><a href="../acerca/vuela-conmigo.html" nav>Vuela Conmigo</a></li>
+					                    <li class="menu-item"><a href="../acerca/vuela-conmigo.html" nav>Proyecto</a></li>
 					            </ul>
 					        </li>
 					        <li class="menu-item col"><a href="../actividades/actividades.html" class="active" nav>Actividades</a></li>
@@ -57,9 +76,88 @@
 	<!-- Contenido seccion -->
 	<section class="panel__secondary">
 		<div class="row panel">
-			<div class="col-12">
-				<p> Pendiente.</p>
-			</div>
+		 	<h6 class="col-12">Selecciona una imagen para mayor informaci&oacute;n</h6>
+		</div>
+		<div class="row panel">
+			<div class="col-12 card_container">
+		    <article class="card card--alt-1" ui-card>
+		        <i class="card__circle"></i>
+		        <i class="card__icon fa fa-info"></i>
+		       <!-- <a class="card__btn" ui-btn>
+		            <span ui-btn-show>Show Details</span>
+		            <span ui-btn-hide>Hide Details</span>
+		            <i class="fa fa-chevron-down"></i>
+		        </a>-->
+		        <div class="card__inner card__inner--preview">
+		            <h2>Talleres</h2>
+		            <p>Diseño e implementaci&oacute;n de procedimientos de interveci&oacute;n para el fortalecimiento de los recursos de aprendizaje de apreciaci&oacute;n art&iacute;stica, mediante las siguientes pr&aacute;cticas l&uacute;dicas.</p>
+					<ol>
+			            	<li>Taller de expresi&oacute;n cultural y baile</li>
+			            	<li>Taller de m&uacute;sica</li>
+			            	<li>Taller de recreaci&oacute;n literaria</li>
+			            	<li>Taller de Teatro</li>
+			            	<li>Taller de Pintura</li>
+			        </ol>
+		        </div>
+		        <!--<div class="card__inner card__inner--contents">
+		            <h2>Sloth Attack</h2>
+		            <p>Paragraph or two goes here</p>
+		        </div> -->
+		    </article>
+		    <article class="card card--alt-2" ui-card>
+		        <i class="card__circle"></i>
+		        <i class="card__icon fa fa-info"></i>
+		        <!--<a class="card__btn" ui-btn>
+		            <span ui-btn-show>Show Details</span>
+		            <span ui-btn-hide>Hide Details</span>
+		            <i class="fa fa-chevron-down"></i>
+		        </a>-->
+		        <div class="card__inner card__inner--preview">
+		            <h2>Sesiones Interclubes</h2>
+		            <p>Con el fin de alinear objetivos, generaci&oacute;n de sinergias en cuanto a la planeaci&oacute;n estrategia y operativa, adem&aacute;s de fomentar la camarader&iacute; entre los socios, sesiones entre los clubes participantes son llevadas a cabo.</p>
+		        </div>
+		        <!--<div class="card__inner card__inner--contents">
+		            <h2>Card contents</h2>
+		            <p>Paragraph or two goes here</p>
+		        </div>-->
+		    </article>
+		    <article class="card card--alt-3" ui-card>
+		        <i class="card__circle"></i>
+		        <i class="card__icon fa fa-info"></i>
+		        <!--<a class="card__btn" ui-btn>
+		            <span ui-btn-show>Show Details</span>
+		            <span ui-btn-hide>Hide Details</span>
+		            <i class="fa fa-chevron-down"></i>
+		        </a>-->
+		        <div class="card__inner card__inner--preview">
+		            <h2>Visitas Ciudad Juarez</h2>
+		            <p>Con el apoyo del DIF estatal, las sesiones son llevadas a cabo en los lugares indicados en una de las fronteras m&aacute;s importantes de M&eacute;xico.</p>
+		            <a href="../contacto/orfanatos.html#juarez" class="more">+ Orfanatos participantes</a>
+		        </div>
+		        <!--<div class="card__inner card__inner--contents">
+		            <h2>Card contents</h2>
+		            <p>Paragraph or two goes here</p>
+		        </div>-->
+		    </article>
+		    <article class="card card--alt-4" ui-card>
+		        <i class="card__circle"></i>
+		        <i class="card__icon fa fa-info"></i>
+		        <!--<a class="card__btn" ui-btn>
+		            <span ui-btn-show>Show Details</span>
+		            <span ui-btn-hide>Hide Details</span>
+		            <i class="fa fa-chevron-down"></i>
+		        </a>-->
+		        <div class="card__inner card__inner--preview">
+		            <h2>Visitas Ciudad de M&eacute;xico</h2>
+		             <p>Gracias a todos esos internados y orfanatos que comparten una misi&oacute;n general en la capital de la rep&uacute;blica, es que se han llevado a cabo las actividades de vuela conmigo.</p>
+		            <a href="../contacto/orfanatos.html#cdmx" class="more">+ Orfanatos participantes</a>
+		        </div>
+		        <!--<div class="card__inner card__inner--contents">
+		            <h2>Card contents</h2>
+		            <p>Paragraph or two goes here</p>
+		        </div>-->
+		    </article>
+		 	</div>
 		</div>
 	</section>
 

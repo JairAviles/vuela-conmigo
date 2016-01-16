@@ -1,0 +1,257 @@
+// ****************************************
+//
+//   Card
+//   -> Card with growing circle info icon
+//
+// ****************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.card {
+
+    // -------------------------------------
+    //   Variables and Base
+    // -------------------------------------
+
+    $card-height:         350px;
+    $card-cont-anim-dist: 20px; // Distance the card headlines, texts and buttons moves on reveal
+
+    $card-col-fg:   $charcoal;
+    $card-col-fg-2: $orange;
+    $card-bg-1:     '#{$image-dir}/secciones/actividades/artes_1-min.jpg';
+    $card-bg-2:     '#{$image-dir}/secciones/actividades/sesion_interclubes1.png';
+    $card-bg-3:     '#{$image-dir}/secciones/actividades/visita_juarez_2015_1.JPG';
+    $card-bg-4:     '#{$image-dir}/secciones/actividades/visita_zona_rosa_2015_1.JPG';
+
+    display: inline-block;
+    flex: 1;
+    position: relative;
+    height: $card-height;
+    min-width: 320px;
+    margin: .5rem;
+
+    background-color: $sky-blue;
+    background-size: cover;
+    background-position: center;
+
+    color: $card-col-fg;
+    overflow: hidden;
+
+
+    // -------------------------------------
+    //   Elements
+    // -------------------------------------
+
+
+    // ----- Information circle icon  ----- //
+
+    &__icon {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1.8rem;
+        font-size: 1rem;
+        line-height: 2rem;
+        text-align: center;
+        color: white;
+
+        transition: all 0.2s ease-in-out;
+    }
+
+
+    // ----- Growing circle jazz ----- //
+
+    &__circle {
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        width: 2rem;
+        height: 2rem;
+        background-color: $white;
+        border-radius: 50%;
+        opacity: 0.3;
+
+        transition: all 0.3s ease-in-out;
+
+    }
+
+
+    // ----- Inner container  ----- //
+
+    &__inner {
+        position: absolute;
+        width: 100%;
+        height: $card-height;
+        padding: 2rem;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+
+        // Card Headline
+        > h2 {
+            margin-top: 0;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 1.4rem;
+            letter-spacing: .5px;
+            transition: all 0s linear;
+            opacity: 0;
+            transform: translate3d( 0, $card-cont-anim-dist, 0 );
+
+            // Active headline effect (parent hover)
+            .card:hover & {
+                opacity: 1;
+                transition: all .3s ease-out;
+                transition-delay: .2s;
+                transform: translate3d(0,0,0);
+            }
+        }
+
+        // Card Text
+        > p, ol {
+            line-height: 25px;
+            letter-spacing: .5px;
+            font-weight: 300;
+            transition: all 0s linear;
+            opacity: 0;
+            transform: translate3d( 0, $card-cont-anim-dist, 0 );
+
+            // Active headline effect (parent hover)
+            .card:hover & {
+                opacity: 1;
+                transition: all .3s ease-out;
+                transition-delay: .225s;
+                transform: translate3d(0,0,0);
+            }
+        }
+
+        // Card preview (on hover)
+        &--preview {
+            @extend .card__inner;
+        }
+
+        // Card main contents (on click)
+        &--contents {
+            @extend .card__inner;
+            transform: translate3d( 0, $card-height, 0);
+        }
+
+    }
+
+
+    // ----- Card button ----- //
+
+    &__btn {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 210px;
+        margin: 1.5rem;
+        padding: 0 2.5rem 0 1.5rem;
+        line-height: 2.5rem;
+        color: $card-col-fg-2;
+        border: 1px solid $orange;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0;
+        z-index: 1;
+        transition: all 0s linear;
+
+        > i {
+            position: absolute;
+            top: 0;
+            right: 1rem;
+            font-size: 0.7rem;
+            line-height: 2.5rem;
+            transition: all 0.2s linear;
+        }
+        > [ui-btn-hide] { display: none; }
+
+    }
+
+
+
+    // -------------------------------------
+    //   Variants
+    // -------------------------------------
+
+    // ----- BGColor variations ----- //
+
+    &--alt-1 { background-image: url($card-bg-1); }
+    &--alt-2 { background-image: url($card-bg-2); }
+    &--alt-3 { background-image: url($card-bg-3); }
+    &--alt-4 { background-image: url($card-bg-4); }
+
+
+
+    // -------------------------------------
+    //   States
+    // -------------------------------------
+
+
+    // ----- Hover ----- //
+
+    &:hover,
+    &[ui-card="active"] {
+
+        .card__circle {
+            transform: scale(70);
+            opacity: 0.9;
+        }
+        .card__btn {
+            opacity: 1;
+            transition: all 0.4s ease-in-out;
+        }
+
+        > p,
+        .card__icon { color: $slate; }
+
+        .card__inner--preview {
+            opacity: 1;
+        }
+
+    }
+
+    // ----- Active ----- //
+
+    &[ui-card="active"] {
+        .card__inner { transition: all 0.2s ease-in-out; }
+        .card__inner--preview {
+            transform: translate3d( 0, -$card-height, 0);
+            opacity: 0;
+        }
+        .card__inner--contents {
+            transform: translate3d( 0, 0, 0);
+            opacity: 1;
+        }
+        .card__btn {
+            > [ui-btn-show] { display: none; }
+            > [ui-btn-hide] { display: inline; }
+            > i { transform: rotateZ(180deg); }
+        }
+    }
+
+}
+
+// -------------------------------------
+//   Container & Etc
+// -------------------------------------
+
+*, *:after, *:before {
+    box-sizing: border-box;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    outline: none;
+}
+
+.card_container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: stretch;
+}
