@@ -494,22 +494,22 @@
 
 .icon-facebook-rect:before {
   content: '\e800';
-  font-size: 2em;
+  font-size: 1em;
   color: #3b5999; }
 
 .icon-twitter-bird:before {
   content: '\e801';
-  font-size: 2em;
+  font-size: 1em;
   color: #60a9de; }
 
 .icon-instagram:before {
   content: '\e802';
-  font-size: 2em;
+  font-size: 1em;
   color: #4E433C; }
 
 .icon-mail:before {
   content: '\e803';
-  font-size: 2em;
+  font-size: 1em;
   color: #005daa; }
 
 /**
