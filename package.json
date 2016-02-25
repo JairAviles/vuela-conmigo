@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/JairAviles/vuela-conmigo#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3"
   }
 }
