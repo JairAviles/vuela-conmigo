@@ -1,0 +1,26 @@
+{
+  "name": "vuela-conmigo",
+  "version": "1.0.0",
+  "description": "Pagina del proyecto vuela conmigo vuelaconmigo.com.mx",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JairAviles/vuela-conmigo.git"
+  },
+  "keywords": [
+    "vuela-conmigo",
+    "Rotaract"
+  ],
+  "author": "@yajairo87+",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JairAviles/vuela-conmigo/issues"
+  },
+  "homepage": "https://github.com/JairAviles/vuela-conmigo#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
