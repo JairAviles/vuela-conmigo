@@ -21,6 +21,16 @@
 	background-color: $white;
 }
 
+.panel__secondary--orange {
+	margin-right:  auto;
+	margin-left:   auto;
+	width: 83%;
+	background: $orange !important;
+	text-shadow: $charcoal 1px 1px 1px;
+	color: $white !important;
+	font-size: 1.2em;
+}
+
 .panel table{
 	border-collapse: collapse;
 	border-spacing: 0;
