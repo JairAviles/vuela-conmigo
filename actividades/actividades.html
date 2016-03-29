@@ -7,7 +7,6 @@
 	<meta charset="UTF-8">
 	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-	<script scr="../scripts/ui-card.js"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -33,7 +32,7 @@
 					                    <li class="menu-item"><a href="../acerca/vuela-conmigo.html" nav>Proyecto</a></li>
 					            </ul>
 					        </li>
-					        <li class="menu-item col"><a href="../actividades/actividades.html" class="active" nav>Actividades</a></li>
+					        <li class="menu-item col"><a href="#" class="active" nav>Actividades</a></li>
 					        <li class="menu-item col"><a href="../contacto/orfanatos.html" nav>Orfanatos</a></li>
 					       <!-- <li class="menu-item col"><a href="#" nav>Recaudaci&oacute;n de Fondos</a></li> -->
 					        <li class="menu-item col"><a href="../contacto/contacto.html" nav>Contacto</a></li>
@@ -91,19 +90,19 @@
 		    <article class="card card--alt-2" ui-card>
 		        <i class="card__circle"></i>
 		        <i class="card__icon fa fa-info"></i>
-		        <!--<a class="card__btn" ui-btn>
-		            <span ui-btn-show>Show Details</span>
-		            <span ui-btn-hide>Hide Details</span>
+		        <a class="card__btn" ui-btn>
+		            <span ui-btn-show>Mostrar Detalles</span>
+		            <span ui-btn-hide>Ocultar Detalles</span>
 		            <i class="fa fa-chevron-down"></i>
-		        </a>-->
+		        </a>
 		        <div class="card__inner card__inner--preview">
 		            <h2>Sesiones Interclubes</h2>
-		            <p>Con el fin de alinear objetivos, generaci&oacute;n de sinergias en cuanto a la planeaci&oacute;n estrategia y operativa, adem&aacute;s de fomentar la camarader&iacute; entre los socios, sesiones entre los clubes participantes son llevadas a cabo.</p>
+		            <p>Con el fin de alinear objetivos, generaci&oacute;n de sinergias en cuanto a la planeaci&oacute;n estrategia y operativa, adem&aacute;s de fomentar la camarader&iacute; aentre los socios, sesiones entre los clubes participantes son llevadas a cabo. Adem&aacute;s, se llevan a cabo otras actividades complementarias para la operaci&oacute;n y ejecuci&oacute;n del proyecto.</p>
 		        </div>
-		        <!--<div class="card__inner card__inner--contents">
-		            <h2>Card contents</h2>
-		            <p>Paragraph or two goes here</p>
-		        </div>-->
+		        <div class="card__inner card__inner--contents">
+		            <h2>03 de Octubre del 2015</h2>
+		            <p>En este d&iacute;a se llev&oacute; a cabo la sesi&oacute;n interclubes entre <a href="https://www.facebook.com/rotaractangeles/" target="_blank">Club Rotaract Puebla de los &Aacute;ngeles</a> y <a href="https://www.facebook.com/RotaractZonaRosaClub/" target="_blank">Club Rotaract Zona Rosa</a> en la localidad de San Francisco Mazapa ubicada en el municipio de Teotihuac&aacute;n, Estado de M&eacute;xico, con la finalidad de coordinar las actividades necesarias que para poner en marcha el proyecto "Vuela Conmigo.</p>
+		        </div>
 		    </article>
 		    <article class="card card--alt-3" ui-card>
 		        <i class="card__circle"></i>
@@ -134,7 +133,9 @@
 		        <div class="card__inner card__inner--preview">
 		            <h2>Visitas Ciudad de M&eacute;xico</h2>
 		             <p>Gracias a todos esos internados y orfanatos que comparten una misi&oacute;n general en la capital de la rep&uacute;blica, es que se han llevado a cabo las actividades de vuela conmigo.</p>
-		            <a href="../contacto/orfanatos.html#cdmx" class="more">+ Orfanatos participantes</a>
+		            <a href="../contacto/orfanatos.html#cdmx" class="more">+ Orfanatos participantes</a><p></p>
+		            <a href="../contacto/orfanatos.html#cdmx" class="more">+ Seguimiento Visitas</a><p></p>
+		            <a href="../contacto/orfanatos.html#cdmx" class="more">+ Actividades Recaudaci&oacute;n de Fondos</a>
 		        </div>
 		        <!--<div class="card__inner card__inner--contents">
 		            <h2>Card contents</h2>
@@ -159,5 +160,31 @@
 		    	</div>
 		</div>
 	</footer>
+	<script>
+	'use strict';
+
+	$(document).ready(function() {
+	    /**
+	     * Attach all event listeners
+	     * @No parameters
+	     */
+	    $('[ui-btn]').on('click', function(e) {
+	        var target = $(e.target).closest('[ui-card]');
+	        if ( target.attr('ui-card') === 'active' ) {
+	            target.attr('ui-card', '');
+	        } else {
+	            target.attr('ui-card', 'active');
+	        }
+	    });
+	    $('[ui-span]').on('click', function(e) {
+	        var target = $(e.target).closest('[ui-card]');
+	        if ( target.attr('ui-card') === 'active' ) {
+	            target.attr('ui-card', '');
+	        } else {
+	            target.attr('ui-card', 'active');
+	        }
+	    });
+	});
+	</script>
 </body>
 </html>

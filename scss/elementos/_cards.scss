@@ -183,10 +183,66 @@
 
     // ----- BGColor variations ----- //
 
-    &--alt-1 { background-image: url($card-bg-1); }
-    &--alt-2 { background-image: url($card-bg-2); }
-    &--alt-3 { background-image: url($card-bg-3); }
-    &--alt-4 { background-image: url($card-bg-4); }
+    &--alt-1 { 
+        background-image: url($card-bg-1);
+        /* Background image is centered vertically and horizontally at all times */
+        background-position: center center;
+        /* Background image doesn't tile */
+        background-repeat: no-repeat;
+
+        /* Background image is fixed in the viewport so that it doesn't move when 
+        the content's height is greater than the image's height 
+        background-attachment: fixed;*/
+
+        /* This is what makes the background image rescale based
+        on the container's size */
+        background-size: cover;
+    }
+    &--alt-2 {
+        background-image: url($card-bg-2);
+        /* Background image is centered vertically and horizontally at all times */
+        background-position: center center;
+        /* Background image doesn't tile */
+        background-repeat: no-repeat;
+
+        /* Background image is fixed in the viewport so that it doesn't move when 
+        the content's height is greater than the image's height 
+        background-attachment: fixed;*/
+
+        /* This is what makes the background image rescale based
+        on the container's size */
+        background-size: cover;
+    }
+    &--alt-3 {
+        background-image: url($card-bg-3);
+        /* Background image is centered vertically and horizontally at all times */
+        background-position: center center;
+        /* Background image doesn't tile */
+        background-repeat: no-repeat;
+
+        /* Background image is fixed in the viewport so that it doesn't move when 
+        the content's height is greater than the image's height 
+        background-attachment: fixed;*/
+
+        /* This is what makes the background image rescale based
+        on the container's size */
+        background-size: cover;
+    }
+    &--alt-4 {
+        background-image: url($card-bg-4);
+        /* Background image is centered vertically and horizontally at all times */
+        background-position: center center;
+        /* Background image doesn't tile */
+        background-repeat: no-repeat;
+
+        /* Background image is fixed in the viewport so that it doesn't move when 
+        the content's height is greater than the image's height 
+        background-attachment: fixed;*/
+
+        /* This is what makes the background image rescale based
+        on the container's size */
+        background-size: cover;
+    }
 
 
 
