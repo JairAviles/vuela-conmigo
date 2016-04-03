@@ -6,8 +6,7 @@ var gulp = require('gulp'),
 	livereload = require('gulp-livereload'),
 	imagemin = require('gulp-imagemin'),
 	prefix = require('gulp-autoprefixer'),
-	connect = require('gulp-connect'),
-	minify = require('gulp-minify');
+	connect = require('gulp-connect');
 
 // Function for binding error handling
 function errorLog(error) {
@@ -20,10 +19,8 @@ function errorLog(error) {
 gulp.task('server', function() {
 	connect.server({
 		root: __dirname,
-		//root: './',
 		livereload: true,
 		port : 8180,
-		//host: 'vuela.dev'
 	});
 });
 
@@ -31,8 +28,8 @@ gulp.task('server', function() {
 // HTML
 gulp.task('html', function(){
 	gulp.src('/**/*.html')
-	.pipe(livereload());
-	//.pipe(connect.reload());
+	//.pipe(livereload());
+	.pipe(connect.reload());
 });
 
 // Styles Task
@@ -44,8 +41,8 @@ gulp.task('sass', function () {
 	}).on('error', errorLog))//sass.logError))
 	.pipe(prefix('last 2 versions'))
 	.pipe(gulp.dest('css'))
-	.pipe(livereload());
-	//.pipe(connect.reload());
+	//.pipe(livereload());
+	.pipe(connect.reload());
 });
 
 // Image Task
@@ -54,25 +51,16 @@ gulp.task('image', function(){
 	gulp.src('img/**')
 	.pipe(imagemin())
 	.pipe(gulp.dest('build/img'))
-	.pipe(livereload());
-	//.pipe(connect.reload());
-});
-
-// JS Task
-// Compress JS files
-gulp.task('minify', function(){
-	gulp.src('scripts/*.js')
-	  .pipe(minify())
-	  .pipe(gulp.dest('build'));
+	//.pipe(livereload());
+	.pipe(connect.reload());
 });
 
 // Watch Task
 gulp.task('watch', function(){
 	livereload.listen();
-	gulp.watch('scripts/*.js', ['minify'])
 	gulp.watch('/**/*.html', ['html']);
 	gulp.watch('scss/**/*.scss', ['sass']);
 	gulp.watch('img/**', ['image']);
 });
 
-gulp.task('default', ['sass', 'html', 'server', 'watch', 'minify']);
+gulp.task('default', ['sass', 'html', 'server', 'watch']);
