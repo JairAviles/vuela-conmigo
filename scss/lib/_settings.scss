@@ -57,7 +57,7 @@ $animationtime :      .8s;
  * Definimos las fuentes a utilizar:
  * $basefont para todos los textos inline
  * $altfont para textos alternativos, como citas, intro, etc...
- * $codefont para código
+ * defont para código
  */
 $basefont : "Open Sans Condensed", Arial, sans-serif;
 $titlefont : "FrutigerLTStd-BoldCn", "FrutigerLTStd-LightCn", "Open Sans Condensed", Arial, sans-serif;
@@ -104,6 +104,8 @@ $size-vars: (
 /* Colores Primarios */
 $azure      : rgb(0,93,170);
 $sky-blue   : rgb(1,180,231);
+$royal-blue : rgb(23,69,143);
+$gold       : rgb(247,168,27);
 
 /* Colores Secundarios */
 $cranberry  : rgb(217,27,92);

@@ -1,0 +1,132 @@
+$carousel-elements:5;
+
+.carousel-indicators {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.carousel-indicators label {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.carousel {
+    position: relative;
+    -webkit-flex-basis:  100% !important;
+            flex-basis:  100% !important;
+    max-width: 100% !important;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100% !important;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    height: 250px;
+    padding: 50px 80px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .6s ease-out;
+}
+
+.carousel-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel-item blockquote p {
+    &:before {
+        content: '\201C';
+    }
+    &:after {
+        content: '\201D';
+    }
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    font-size: 4rem;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity .2s;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    opacity: 1;
+}
+
+@include carousel-checked
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+}
+
+.carousel-bullet {
+    padding: 15px 4px;
+    display: block;
+    cursor: pointer;
+    background: $royal-blue;
+    color: $white;
+    opacity: 0.8;
+}
+
+.carousel-bullet:hover {
+    color: $white;
+}
+
+@include carousel-checked-indicator
+
+.slide-title {
+    font-size: 32px;
+    font-weight: 200;
+    color: #fff;
+}
+
+.slide-body {
+    color: #fff;
+    line-height: 1.5;
+    font-style: italic;
+    font-size: 1.4em;
+    font-weight: bolder;
+}
+
+.slide-cite {
+    font-style: italic;
+    font-size: 1.2em;
+    color: $white;
+    font-weight: bolder;
+}

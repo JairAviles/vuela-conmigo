@@ -3,6 +3,20 @@
 \*------------------------------------*/
 
 /**
+ * Mixin para gestionar los pseudoselectores en la clase de menu principa
+ */
+@mixin cf() {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+   clear: both;
+  }
+}
+
+/**
  * Mixin para gestionar el tamaño de columnas en el grid
  */
 @mixin columns {
@@ -33,15 +47,20 @@
 }
 
 /**
- * Creamos prefijos para todo dios
- *
- *    `@include vendor(border-radius, 4px);`
- *
- **/
-@mixin vendor($property, $value...){
-    -webkit-#{$property}:$value;
-       -moz-#{$property}:$value;
-        -ms-#{$property}:$value;
-         -o-#{$property}:$value;
-            #{$property}:$value;
+ * Mixin para gestionar el total de controles
+ */
+@mixin carousel-checked {
+  @for $i from 1 through $carousel-elements{
+    #carousel-#{$i}:checked ~ .control-#{$i} {
+      display: block;
+    }
+  }
+}
+
+@mixin carousel-checked-indicator {
+  @for $i from 1 through $carousel-elements {
+    #carousel-#{$i}:checked ~ .control-#{$i} ~ .carousel-indicators li:nth-child(#{$i}) .carousel-bullet {
+      color: $gold;
+    }
+  }
 }
