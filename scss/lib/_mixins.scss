@@ -64,3 +64,33 @@
     }
   }
 }
+
+@mixin slide-item {
+  @for $i from 1 through $carousel-elements {
+    @if $i == 1 {
+      #slide-item-#{$i}{
+        background: $background url('#{$image-dir}/carousel/expresion.jpg') no-repeat center center local;
+      }
+    }
+    @if $i == 2 {
+      #slide-item-#{$i}{
+        background: $background url('#{$image-dir}/carousel/musica.jpg') no-repeat center center local;
+      }
+    }
+    @if $i == 3 {
+      #slide-item-#{$i}{
+        background: $background url('#{$image-dir}/carousel/literatura.jpg') no-repeat center center local;
+      }
+    }
+    @if $i == 4 {
+      #slide-item-#{$i}{
+        background: $background url('#{$image-dir}/carousel/teatro.jpg') no-repeat center center local;
+      }
+    }
+    @if $i == 5 {
+      #slide-item-#{$i}{
+        background: $background url('#{$image-dir}/carousel/pintura.jpg') no-repeat center center local;
+      }
+    }
+  }
+}
