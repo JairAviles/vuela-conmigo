@@ -73,3 +73,7 @@ footer a {
 footer a:hover {
 	color: $silver;
 }
+
+ul.ul-no-style li {
+	list-style: none !important;
+}
