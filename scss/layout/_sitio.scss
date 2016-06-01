@@ -1,25 +1,6 @@
 /*------------------------------------*\
     $SITIO
 \*------------------------------------*/
-@-webkit-viewport {
-	width : device-width;
-}
-
-@-moz-viewport {
-	width : device-width;
-}
-
-@-ms-viewport {
-	width : device-width;
-}
-
-@-o-viewport {
-	width : device-width;
-}
-
-@viewport {
-	width : device-width;
-}
 
 html {
 	overflow-y: scroll;
@@ -50,10 +31,9 @@ body {
 * y detalles que forman tu web. Disfruta!
 */
 footer {
-	bottom: 0;
 	left: 0;
 	background-color: $charcoal;
-	position: relative;
+	position: absolute;
 	padding: 20px 0;
 	box-sizing: border-box;
 	color: $silver;

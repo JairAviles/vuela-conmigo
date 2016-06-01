@@ -59,7 +59,7 @@
 
 @mixin carousel-checked-indicator {
   @for $i from 1 through $carousel-elements {
-    #carousel-#{$i}:checked ~ .control-#{$i} ~ .carousel-indicators li:nth-child(#{$i}) .carousel-bullet {
+    #carousel-#{$i}:checked ~ .carousel-indicators li:nth-child(#{$i}) .carousel-bullet {
       color: $gold;
     }
   }
@@ -69,30 +69,25 @@
   @for $i from 1 through $carousel-elements {
     @if $i == 1 {
       #slide-item-#{$i}{
-        background: $background url('#{$image-dir}/carousel/expresion.jpg') no-repeat center center local;
+        background: $background url('#{$image-dir}/carousel/danza.jpg') no-repeat center center local;
       }
     }
     @if $i == 2 {
       #slide-item-#{$i}{
-        background: $background url('#{$image-dir}/carousel/danza.jpg') no-repeat center center local;
+        background: $background url('#{$image-dir}/carousel/musica.jpg') no-repeat center center local;
       }
     }
     @if $i == 3 {
       #slide-item-#{$i}{
-        background: $background url('#{$image-dir}/carousel/musica.jpg') no-repeat center center local;
+        background: $background url('#{$image-dir}/carousel/literatura.jpg') no-repeat center center local;
       }
     }
     @if $i == 4 {
       #slide-item-#{$i}{
-        background: $background url('#{$image-dir}/carousel/literatura.jpg') no-repeat center center local;
-      }
-    }
-    @if $i == 5 {
-      #slide-item-#{$i}{
         background: $background url('#{$image-dir}/carousel/teatro.jpg') no-repeat center center local;
       }
     }
-    @if $i == 6 {
+    @if $i == 5 {
       #slide-item-#{$i}{
         background: $background url('#{$image-dir}/carousel/pintura.jpg') no-repeat center center local;
       }
