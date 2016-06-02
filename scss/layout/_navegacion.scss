@@ -65,7 +65,6 @@ $suboffset       : 0.35rem; // offset the top padding
   float:left;
   padding:0;
   margin:0;
-  box-shadow: 0 2px 5px 0 $cranberry;
   font-size: 14px;
 
   li {
@@ -119,6 +118,7 @@ $suboffset       : 0.35rem; // offset the top padding
 /* THEME  */
 .navbar {
   background: $cranberry;
+  box-shadow: 0 2px 5px 0 #58585a;
   @include cf();
 }
 
@@ -177,6 +177,7 @@ $suboffset       : 0.35rem; // offset the top padding
    // Drop Down Menus
   .sub-menu {
     background:$cranberry;
+    box-shadow: 0 2px 5px 0 #58585a;
     padding :$subPadding;
     transition:all 700ms ease;
     li {
