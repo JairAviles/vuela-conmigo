@@ -1,4 +1,4 @@
-$carousel-elements:5;
+$carousel-elements:6;
 
 .carousel-indicators {
     margin-bottom: 0;
@@ -7,8 +7,9 @@ $carousel-elements:5;
 }
 
 .carousel-indicators label {
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .carousel {
