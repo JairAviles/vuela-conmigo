@@ -21,12 +21,12 @@
   },
   "homepage": "https://github.com/JairAviles/vuela-conmigo#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-connect": "^3.1.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.2.0"
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-livereload": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^2.3.2"
   }
 }
